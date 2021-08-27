@@ -4,7 +4,6 @@ class CreateRecipes < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :stars
       t.belongs_to :dinner, null: false, foreign_key: true
-
       t.timestamps
     end
   end
