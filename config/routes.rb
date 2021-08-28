@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root 'dinner#index'
   get '/dinners', to:'dinner#index'
-
+  get '/dinners/new', to:'dinner#new'
+  post '/dinners', to:'dinner#create'
+  delete '/dinners/:id', to:'dinner#destroy'
 end
