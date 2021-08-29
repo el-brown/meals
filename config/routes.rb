@@ -13,4 +13,7 @@ Rails.application.routes.draw do
 
 
   delete '/dinners/:id', to:'dinner#destroy'
+
+  
+  get '/dinners/:id/recipes', to: 'recipe#index'
 end
