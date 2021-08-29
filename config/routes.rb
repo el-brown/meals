@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   delete '/dinners/:id', to:'dinner#destroy'
 
   
-  get '/dinners/:id/recipes', to: 'recipe#index'
+  get '/dinners/:dinner_id/recipes', to: 'recipe#index'
 end

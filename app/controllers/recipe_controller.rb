@@ -3,15 +3,24 @@ class RecipeController < ApplicationController
 
 
   def index
-    @recipes = Recipe.all
-    render component: "Recipes", props:{recipes:@recipes, dinners:@dinners}
+    render component: "Recipes", props:{dinner:@dinner, recipes:@dinner.recipes}
   end
 
 
+private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :stars)
+  end
 
   def set_dinner
-    @dinners = Dinner.all
+    @dinner = Dinner.find(params[:dinner_id])
   end
+
+    
+  # def set_recipe
+  #   @recipe = @dinner.recipes.find(params[:id])
+  # end
 
 
 end
